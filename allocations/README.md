@@ -10,6 +10,8 @@ Run the program and also make a profiling recording.
 
 ### Analyzing Java Flight Recording
 
+####  Added 2nd person commit
+
 In Memory -> Allocation tab, you should see a high allocation rate.
 
 Also, see Memory -> Garbage Collections tab and check the frequency of GC events.
