@@ -1,0 +1,17 @@
+#scalars
+name: Kiran
+location: Hyderabad
+Profession: IT Employee
+#lists
+hobbies: 
+  -Reading
+  -Games
+  -making videos
+#mappings:
+favourte foods:
+  fruits: Apple
+  drinks: Sprite
+#multiscalar
+whatisthisvideoabout:
+  this video discusses about
+  Yaml syntax and how to use it
