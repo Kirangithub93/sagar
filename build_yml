@@ -1,15 +1,42 @@
-name: build work flow
-on: 
- push:
-  bracnhes: 
-   -main
+name: Build Pipeline
+
+# Trigger the workflow on push or pull request to the main branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
- build:
-   runs-on:ubuntu-latest
-   steps:
-     -name: checkout code
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout repository
       uses: actions/checkout@v2
-     -name: Runa a Script
-      run: echo "Hello world"
-      
+
+    # Step 2: Set up Node.js (or your build environment)
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # or specify your version
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: npm install  # Replace with your project build steps, e.g., npm install
+
+    # Step 4: Run tests (optional)
+    - name: Run tests
+      run: npm test  # Replace with your test command
+
+    # Step 5: Build the project
+    - name: Build project
+      run: npm run build  # Replace with your build command, e.g., npm run build
+
+    # Step 6: Optionally, deploy the project (e.g., to a server or cloud service)
+    - name: Deploy
+      run: |
+        echo "Deploying to server..."  # Replace with actual deployment steps
